@@ -1,0 +1,168 @@
+
+.buttons {
+	margin: 0 8px;
+	border-radius: 50%;
+	transition: all 0.3s ease;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.borderGray {
+	border: 1px solid #707070;
+	background-color: transparent;
+}
+
+.borderYellow {
+	border: 1px solid #FABB4C;
+	background-color: #FABB4C;
+}
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.containerFlex {
+	display: flex;
+	flex-direction: column;
+}
+
+.title {
+	font-size: 1.25rem
+		/* 20px */
+	;
+	line-height: 1.75rem
+		/* 28px */
+	;
+	font-weight: 800;
+	color: #000;
+}
+
+.cardImage {
+	margin-left: 20px;
+	margin-right: 20px;
+	max-height: 211px;
+	overflow: hidden;
+}
+
+.cardImage img {
+	width: 251px;
+	/*Para que la imagen no se estire*/
+	position: relative;
+	object-fit: cover;
+	/*brightness 75%*/
+
+}
+/* overlay
+
+*/
+
+.overlay {
+	background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+	z-index: 2; 
+	width: 251px;
+	height: 160px;
+	margin-top: 50px;
+	opacity: 0.2;
+	transition: .5s ease;
+	position: fixed;
+}
+
+.cardText {
+	top: 176px;
+	color: white;
+	font-weight: bold;
+	position: relative;
+	z-index: 20;
+	text-align: center;
+}
+
+.p-content {
+	padding-left: 1rem
+		/* 16px */
+	;
+	padding-right: 1rem
+		/* 16px */
+	;
+}
+
+@media (min-width: 768px) {
+	.p-content {
+		padding-left: 5rem
+			/* 80px */
+		;
+		padding-right: 5rem
+			/* 80px */
+		;
+	}
+
+	.containerFlex {
+		flex-direction: row;
+	}
+
+	.cardImage {
+		top: 128px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.p-content {
+		padding-left: 10rem
+			/* 160px */
+		;
+		padding-right: 10rem
+			/* 160px */
+		;
+	}
+}
+
+@media (min-width: 1280px) {
+	.p-content {
+		padding-left: 15rem
+			/* 240px */
+		;
+		padding-right: 15rem
+			/* 240px */
+		;
+	}
+
+	.cardText {
+		top: 176px;
+	}
+}
+
+.black-bottom {
+	padding: 0.5rem
+	  /* 8px */
+	;
+	font-size: 0.875rem
+	  /* 14px */
+	;
+	line-height: 1.25rem
+	  /* 20px */
+	;
+	width: 8rem
+	  /* 128px */
+	;
+	color: #000;
+	border: 1px solid #000;
+	transition: all;
+	border-radius: 0 !important;
+	transition-duration: 200ms;
+	transition-timing-function: linear;
+	cursor: pointer;
+
+  }
+  
+  .black-bottom:hover {
+	background: #000;
+	color: #fff;
+	transition: all;
+	transition-duration: 200ms;
+	transition-timing-function: linear;
+  }
