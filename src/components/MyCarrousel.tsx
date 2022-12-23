@@ -8,6 +8,9 @@ type imgPropiedad = {
 };
 
 export interface MyCarrouselProps {
+	/**
+     *  cantidad de imagenes a mostrar en el carrousel
+     */
 	cantImage?: number;
 }
 
@@ -109,8 +112,7 @@ const circulos = (imagesPropiedades.length) - (cantImage - 1);
 			<div className="containerFlex">
 				{propiedades.map((p, index) => (
 					<div key={index} className="cardImage">
-						<div className="overlay">
-						</div>
+						<div className="overlay"></div>
 							<p className="cardText">{p.text}</p>
 							<img src={p.img} alt={p.alt} />
 					</div>

@@ -68,9 +68,9 @@
 	width: 251px;
 	height: 160px;
 	margin-top: 50px;
-	opacity: 0.2;
+	opacity: 0.5;
 	transition: .5s ease;
-	position: fixed;
+	position: absolute;
 }
 
 .cardText {
