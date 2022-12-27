@@ -13,6 +13,7 @@ dist-ssr
 *.local
 
 # production
+/dist
 /build
 /storybook-static
 
