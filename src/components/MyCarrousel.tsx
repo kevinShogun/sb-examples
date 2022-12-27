@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./MyCarrousel.css";
 
-type imgPropiedad = {
+export type imgPropiedad = {
 	img: string;
 	alt: string;
 	text: string;
@@ -12,6 +12,7 @@ export interface MyCarrouselProps {
      *  cantidad de imagenes a mostrar en el carrousel
      */
 	cantImage?: number;
+	imagesWhitText?: imgPropiedad[];
 }
 
 const imagesPropiedades: imgPropiedad[] = [
@@ -59,9 +60,10 @@ const imagesPropiedades: imgPropiedad[] = [
 ];
 
 export const MyCarrousel = ({ 
-	cantImage = 3
+	cantImage = 3,
+	imagesWhitText = imagesPropiedades
  }: MyCarrouselProps) => {
-const circulos = (imagesPropiedades.length) - (cantImage - 1);
+const circulos = (imagesWhitText.length) - (cantImage - 1);
 
 	const [propiedades, setPropiedades] = useState<imgPropiedad[]>([]);
 	const [currentCircle, setCurrentCircle] = useState<number>(0);
@@ -72,7 +74,7 @@ const circulos = (imagesPropiedades.length) - (cantImage - 1);
 		setCurrentCircle(c);
 		let newPropiedades: imgPropiedad[] = [];
 		for (let i = c; i < c + 3; i++) {
-			newPropiedades.push(imagesPropiedades[i]);
+			newPropiedades.push(imagesWhitText[i]);
 		}
 		setCount(c);
 	};
@@ -88,12 +90,12 @@ const circulos = (imagesPropiedades.length) - (cantImage - 1);
 			};
 		}
 		// setcurrentCita(citas[count]);
-		setPropiedades(imagesPropiedades.slice(count, count + cantImage));
-		setCurrentCircle(count === imagesPropiedades.length - 2 ? 0 : count);
+		setPropiedades(imagesWhitText.slice(count, count + cantImage));
+		setCurrentCircle(count === imagesWhitText.length - 2 ? 0 : count);
 		return () => {
 			clearInterval(id);
 		};
-	}, [count, imagesPropiedades, cantImage]);
+	}, [count, imagesWhitText, cantImage]);
 
 	for (let c = 0; c < circulos; c++) {
 		botones.push(
@@ -127,3 +129,5 @@ const circulos = (imagesPropiedades.length) - (cantImage - 1);
 		</div>
 	);
 };
+
+export default MyCarrousel;
